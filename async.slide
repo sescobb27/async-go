@@ -1,0 +1,38 @@
+Asyncronous and Parallel Behaviour in golang
+Medellin
+10 Apr 2015
+Tags: go, golang, async, goroutine, parallel
+
+Simon Escobar B
+Go entusiast
+sescobb27@gmail.com
+www.github.com/sescobb27
+@sescobb27
+
+* Secuential
+
+* Basic Syncronization
+    sync.WaitGroup
+    sync.RWMutex
+    sync.Mutex
+
+* Basic Syncronization
+.play parallel_forloop.go /START PARALLELFORLOOP OMIT/,/ END PARALLELFORLOOP OMIT/
+
+* Basic Syncronization
+.link http://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem RWMutex Readers-Writers Problem
+
+* Syncronization via Channels (semaphore)
+Declaration
+
+.code semaphore.go /START TYPES OMIT/,/END TYPES OMIT/
+
+* Syncronization via Channels (semaphore)
+Implementation
+
+.code semaphore.go /START SEM OMIT/,/END SEM OMIT/
+
+* Syncronization via Channels (semaphore)
+.code semaphore.go /START SEM2 OMIT/,/END SEM2 OMIT/
+
+* Futures
