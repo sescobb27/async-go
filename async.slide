@@ -15,11 +15,22 @@ www.github.com/sescobb27
     sync.WaitGroup
     sync.RWMutex
     sync.Mutex
+    sync.Once
+    sync/atomic
 
-* Basic Syncronization
+* Basic Syncronization (sync.WaitGroup)
 .play parallel_forloop.go /START PARALLELFORLOOP OMIT/,/ END PARALLELFORLOOP OMIT/
 
-* Basic Syncronization
+* Basic Syncronization (sync.Once)
+.play once.go /START ONCE OMIT/,/END ONCE OMIT/
+
+* Basic Syncronization (sync/atomic)(before)
+.play non_atomic.go /START NON-ATOMIC OMIT/,/END NON-ATOMIC OMIT/
+
+* Basic Syncronization (sync/atomic)(after)
+.play atomic.go /START ATOMIC OMIT/,/END ATOMIC OMIT/
+
+* Basic Syncronization (sync.RWMutex)
 .link http://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem RWMutex Readers-Writers Problem
 
 * Syncronization via Channels (semaphore)
