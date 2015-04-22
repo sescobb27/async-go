@@ -30,6 +30,9 @@ www.github.com/sescobb27
 * Basic Syncronization (sync/atomic)(after)
 .play atomic.go /START ATOMIC OMIT/,/END ATOMIC OMIT/
 
+* Danger of Global Variables
+.play async_server.go /START SERVER OMIT/,/END SERVER OMIT/
+
 * Basic Syncronization (sync.RWMutex)
 .link http://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem RWMutex Readers-Writers Problem
 
