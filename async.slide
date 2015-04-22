@@ -9,6 +9,16 @@ sescobb27@gmail.com
 www.github.com/sescobb27
 @sescobb27
 
+* What is concurrency?
+
+Concurrency is the composition of independently executing computations.
+
+Concurrency is a way to structure software, particularly as a way to write clean code that interacts well with the real world.
+
+It is not parallelism.
+
+.link https://talks.golang.org/2012/concurrency.slide Rob Pike - 'Concurrency Is Not Parallelism'
+
 * Secuential
 
 * Basic Syncronization
@@ -36,6 +46,11 @@ www.github.com/sescobb27
 * Basic Syncronization (sync.RWMutex)
 .link http://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem RWMutex Readers-Writers Problem
 
+* Go Philosophy
+Don't communicate by sharing memory, share memory by communicating.
+
+.link https://blog.golang.org/pipelines Channels
+
 * Syncronization via Channels (semaphore)
 Declaration
 
@@ -50,3 +65,7 @@ Implementation
 .code semaphore.go /START SEM2 OMIT/,/END SEM2 OMIT/
 
 * Futures
+
+* Must See
+.link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
+.link http://greenteapress.com/semaphores/ The Little Book of Semaphores
