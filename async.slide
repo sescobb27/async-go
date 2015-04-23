@@ -64,7 +64,12 @@ Implementation
 * Syncronization via Channels (semaphore)
 .code semaphore.go /START SEM2 OMIT/,/END SEM2 OMIT/
 
-* Futures
+* Async Promises
+.code promises.go /START PROMISE OMIT/,/END PROMISE OMIT/
+.code promises.go /START REQUEST OMIT/,/END REQUEST OMIT/
+
+* Implementation
+.code promises.go /START IMPLEMENTATION OMIT/,/END IMPLEMENTATION OMIT/
 
 * Must See
 .link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'

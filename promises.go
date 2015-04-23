@@ -17,21 +17,27 @@ func panicIfError(err error) {
 	}
 }
 
+// START PROMISE OMIT
 type Promise interface {
 	Then(func(value interface{}) Promise) Promise
 }
 
+// END PROMISE OMIT
+
+// START REQUEST OMIT
 type AsyncRequest struct {
 	Promise
 	body chan int64
 }
 
+// END REQUEST OMIT
 func NewAsyncRequest() *AsyncRequest {
 	return &AsyncRequest{
 		body: make(chan int64),
 	}
 }
 
+// START IMPLEMENTATION OMIT
 func (aReq *AsyncRequest) Then(chain func(value interface{}) Promise) Promise {
 	return chain(<-aReq.body)
 }
@@ -48,6 +54,8 @@ func (aReq *AsyncRequest) Get(path string) Promise {
 	}()
 	return aReq
 }
+
+// END IMPLEMENTATION OMIT
 
 func main() {
 	req := NewAsyncRequest()
