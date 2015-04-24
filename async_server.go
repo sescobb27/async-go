@@ -23,6 +23,7 @@ func main() {
 		fmt.Fprintf(os.Stdout, "ATOMIC: %d\n", atomic.AddInt64(&atomicCount, 1))
 	})
 
+	// error handling omitted for demostrative purposes but NOT DO THIS
 	http.ListenAndServe(":3000", nil)
 }
 

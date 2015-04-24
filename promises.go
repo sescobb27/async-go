@@ -53,10 +53,16 @@ func (aReq *AsyncRequest) Get(path string) Promise {
 	go func() {
 		res, err := http.Get(path)
 		defer res.Body.Close()
-		panicIfError(err)
+		if err != nil {
+			fmt.Println("Fatal error ", err.Error())
+			os.Exit(1)
+		}
 		var answer int64
 		err = binary.Read(res.Body, binary.LittleEndian, &answer)
-		panicIfError(err)
+		if err != nil {
+			fmt.Println("Fatal error ", err.Error())
+			os.Exit(1)
+		}
 		aReq.body <- answer
 	}()
 	return aReq
