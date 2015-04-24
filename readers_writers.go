@@ -8,13 +8,13 @@ import (
 	"time"
 )
 
-// type representing shared SharedResource.  contents could be anything
+// SharedResource is the type representing shared resource.
+// it's contents could be anything
 type SharedResource struct {
 	string
 }
 
-// struct wraps pointer to SharedResource with embedded RWMutex, thus
-// acquiring RWMutex methods
+// Access struct wraps pointer to SharedResource with embedded RWMutex
 type Access struct {
 	sync.RWMutex
 	res *SharedResource

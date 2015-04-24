@@ -8,31 +8,31 @@ import (
 )
 
 var (
-	u_names = []string{
+	names = []string{
 		"Pepe",
 		"Gozalo",
 		"Juan",
 		"Carolina",
 	}
-	u_last_names = []string{
+	lastNames = []string{
 		"Escobar",
 		"Sierra",
 		"Velez",
 		"Mejia",
 	}
-	u_usernames = []string{
+	usernames = []string{
 		"pep66",
 		"jsi3rra",
 		"jvlez8",
 		"caro27",
 	}
-	u_emails = []string{
+	emails = []string{
 		"pepe27@gmail.com",
 		"gozalosierra@gmail.com",
 		"juanv@gmail.com",
 		"carolina@gmail.com",
 	}
-	u_passwords = []string{
+	passwords = []string{
 		"qwerty",
 		"123456",
 		"AeIoU!@",
@@ -40,6 +40,7 @@ var (
 	}
 )
 
+// User model
 type User struct {
 	Username     string
 	Email        string
@@ -52,11 +53,11 @@ func makeUsers() []User {
 	users := []User{}
 	for i := 0; i < 10; i++ {
 		u := User{
-			Username:     u_usernames[i%4],
-			Email:        u_emails[i%4],
-			LastName:     u_last_names[i%4],
-			Name:         u_names[i%4],
-			PasswordHash: u_passwords[i%4],
+			Username:     usernames[i%4],
+			Email:        emails[i%4],
+			LastName:     lastNames[i%4],
+			Name:         names[i%4],
+			PasswordHash: passwords[i%4],
 		}
 		users = append(users, u)
 	}
@@ -64,7 +65,7 @@ func makeUsers() []User {
 }
 
 // START PARALLELFORLOOP OMIT
-func ParallelForLoop() {
+func parallelLoop() {
 	users := makeUsers()
 	var wg sync.WaitGroup
 	for _, u := range users {
@@ -79,5 +80,5 @@ func ParallelForLoop() {
 
 // END PARALLELFORLOOP OMIT
 func main() {
-	ParallelForLoop()
+	parallelLoop()
 }

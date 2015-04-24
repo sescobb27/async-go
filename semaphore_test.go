@@ -7,31 +7,31 @@ import (
 )
 
 var (
-	u_names = []string{
+	names = []string{
 		"Pepe",
 		"Gozalo",
 		"Juan",
 		"Carolina",
 	}
-	u_last_names = []string{
+	lastNames = []string{
 		"Escobar",
 		"Sierra",
 		"Velez",
 		"Mejia",
 	}
-	u_usernames = []string{
+	usernames = []string{
 		"sescob",
 		"jsi3rra",
 		"jvlez8",
 		"caro27",
 	}
-	u_emails = []string{
+	emails = []string{
 		"pepe27@gmail.com",
 		"gozalosierra@gmail.com",
 		"juanv@gmail.com",
 		"carolina@gmail.com",
 	}
-	u_passwords = []string{
+	passwords = []string{
 		"qwerty",
 		"123456",
 		"AeIoU!@",
@@ -51,18 +51,18 @@ func makeUsers() []User {
 	users := []User{}
 	for i := 0; i < 50; i++ {
 		u := User{
-			Username:     u_usernames[i%4] + string(i),
-			Email:        u_emails[i%4] + string(i),
-			LastName:     u_last_names[i%4] + string(i),
-			Name:         u_names[i%4] + string(i),
-			PasswordHash: u_passwords[i%4] + string(i),
+			Username:     usernames[i%4] + string(i),
+			Email:        emails[i%4] + string(i),
+			LastName:     lastNames[i%4] + string(i),
+			Name:         names[i%4] + string(i),
+			PasswordHash: passwords[i%4] + string(i),
 		}
 		users = append(users, u)
 	}
 	return users
 }
 
-func TestMemorySession_Set_and_Get(t *testing.T) {
+func TestSetGetMemorySession(t *testing.T) {
 	t.Parallel()
 	users := makeUsers()
 	mStore := NewMemorySessionStore("memSession")
@@ -79,7 +79,7 @@ func TestMemorySession_Set_and_Get(t *testing.T) {
 	wg.Wait()
 }
 
-func TestMemorySession_Set_and_Delete(t *testing.T) {
+func TestSetDeleteMemorySession(t *testing.T) {
 	t.Parallel()
 	users := makeUsers()
 	mStore := NewMemorySessionStore("memSession")

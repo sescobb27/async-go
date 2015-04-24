@@ -17,6 +17,7 @@ func panicIfError(err error) {
 	}
 }
 
+// Promise interface for handling async responses anc callbacks
 // START PROMISE OMIT
 type Promise interface {
 	Then(func(value interface{}) Promise) Promise
@@ -24,12 +25,15 @@ type Promise interface {
 
 // END PROMISE OMIT
 
+// AsyncRequest implements Promise interface and has a buffered int64 chan
+// for syncronization
 // START REQUEST OMIT
 type AsyncRequest struct {
 	Promise
 	body chan int64
 }
 
+// NewAsyncRequest returns a new AsyncRequest object
 // END REQUEST OMIT
 func NewAsyncRequest() *AsyncRequest {
 	return &AsyncRequest{
@@ -37,11 +41,14 @@ func NewAsyncRequest() *AsyncRequest {
 	}
 }
 
+// Then satisfy Promise interface
 // START IMPLEMENTATION OMIT
 func (aReq *AsyncRequest) Then(chain func(value interface{}) Promise) Promise {
 	return chain(<-aReq.body)
 }
 
+// Get perform a http.Get request and return a Promise for handling it's response
+// asyncronously
 func (aReq *AsyncRequest) Get(path string) Promise {
 	go func() {
 		res, err := http.Get(path)
