@@ -19,7 +19,35 @@ It is not parallelism.
 
 .link https://talks.golang.org/2012/concurrency.slide Rob Pike - 'Concurrency Is Not Parallelism'
 
-* Secuential
+_Scaling_software_systems_to_many-core_architectures_is_one_of_the_most_important_challenges_in_computing_today._A_major_impediment_to_scalability_is_synchronization._
+
+.link http://sigops.org/sosp/sosp13/papers/p33-david.pdf Everything You Always Wanted to Know About Synchronization but Were Afraid to Ask
+
+* What is parallelism?
+
+*Divide* *and* *Conquer*
+
+Parallelism is a form of computation in which many calculations are performed simultaneously.
+
+Parallelism is a way to structure software, in a way it can make as much as possible simultaneously.
+
+*BUT*
+
+.link http://en.wikipedia.org/wiki/Parallel_computing#/media/File:AmdahlsLaw.svg Amdahl's law.
+
+* Why?
+.link http://blog.iron.io/2013/03/how-we-went-from-30-servers-to-2-go.html How We Went from 30 Servers to 2: Go
+.link http://sendgrid.com/blog/convince-company-go-golang/ Over 500 million messages per day at SendGrid.
+- https://twitter.com/mattetti/status/591129748501176320 Matt Aimonetti - Splice
+- Ruby (the GIL) [[https://twitter.com/yukihiro_matz/status/495219763883163648][Go concurrency patterns in ruby 3?]] _read_discussion_
+- Pyhton (the GIL) [[https://wiki.python.org/moin/GlobalInterpreterLock]]
+- Node.js (Callback Hell - Promises)
+_The_argument_always_came_up_that_you_can_do_asynchronous_programming_in_Java,_but_it_isn’t_pretty_
+
+
+* Currently Using Go
+
+.link https://github.com/golang/go/wiki/GoUsers
 
 * Basic Syncronization
     sync.WaitGroup
