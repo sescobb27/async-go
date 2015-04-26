@@ -35,7 +35,7 @@ Parallelism is a way to structure software, in a way it can make as much as poss
 
 .link http://en.wikipedia.org/wiki/Parallel_computing#/media/File:AmdahlsLaw.svg Amdahl's law.
 
-* Why?
+* Why? (Concurrency/Parallelism) - Go
 .link http://blog.iron.io/2013/03/how-we-went-from-30-servers-to-2-go.html How We Went from 30 Servers to 2: Go
 .link http://sendgrid.com/blog/convince-company-go-golang/ Over 500 million messages per day at SendGrid.
 - https://twitter.com/mattetti/status/591129748501176320 Matt Aimonetti - Splice
